@@ -14,14 +14,16 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.MVies.Fullscreen" parent="Theme.MVies">
-        <item name="android:actionBarStyle">@style/Widget.Theme.MVies.ActionBar.Fullscreen</item>
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowBackground">@null</item>
+    <style name="Theme.MVies.Fullscreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@color/black</item>
     </style>
 
-    <style name="ThemeOverlay.MVies.FullscreenContainer" parent="">
-        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
-        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    <style name="AppTheme.FullScreenDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">#B4212941</item>
     </style>
 </resources>
