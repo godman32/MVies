@@ -13,6 +13,9 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
 
+    <color name="yellow">#E3B735</color>
+
     <color name="transparant">#00FFFFFF</color>
     <color name="blur">#9A36343C</color>
+    <color name="background">#232529</color>
 </resources>

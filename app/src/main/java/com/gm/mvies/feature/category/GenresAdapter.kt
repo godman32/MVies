@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gm.mvies.databinding.ItemCategoryBinding
-import com.gm.mvies.feature.Genre
+import com.gm.mvies.feature.listener.OnGenreListener
 
-class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class GenresAdapter(private val onGenreListener: OnGenreListener) : RecyclerView.Adapter<GenresAdapter.ViewHolder>() {
     private var genres = ArrayList<Genre>()
 
     @SuppressLint("NotifyDataSetChanged")
@@ -32,8 +32,14 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 //        Glide.with(holder.itemView)
 //            .load("https://image.tmdb.org/t/p/w500" + movieList[position].poster_path)
 //            .into(holder.binding.movieImage)
-        holder.binding.category.text = genres[position].name
+        holder.binding.genre.text = genres[position].name
+
+        holder.binding.genre.setOnClickListener {
+            onGenreListener.onGenreSelected(genres[position])
+        }
     }
+
+
 
     override fun getItemCount(): Int {
         return genres.size

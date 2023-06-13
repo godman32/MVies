@@ -1,4 +1,4 @@
-package com.gm.mvies.feature
+package com.gm.mvies.feature.category
 
 
 import com.google.gson.annotations.SerializedName
