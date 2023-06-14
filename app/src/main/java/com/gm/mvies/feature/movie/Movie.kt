@@ -1,6 +1,6 @@
 package com.gm.mvies.feature.movie
 
-import com.gm.mvies.feature.category.Genres
+import com.gm.mvies.feature.genre.Genres
 import com.google.gson.annotations.SerializedName
 
 /**

@@ -4,9 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gm.mvies.feature.category.Genre
-import com.gm.mvies.feature.category.Genres
-import com.gm.mvies.feature.listener.OnLoadDataListener
+import com.gm.mvies.feature.genre.Genre
+import com.gm.mvies.feature.genre.Genres
 import com.gm.mvies.feature.movie.Movie
 import com.gm.mvies.feature.movie.Movies
 import com.zym.zymresseler.conn.ApiClient

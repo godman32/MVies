@@ -23,6 +23,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'Api_Token', ApiToken
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -45,11 +50,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // Activity KTX for viewModels()
-//    implementation "androidx.fragment:fragment-ktx:1.6.0"
-//    implementation "androidx.activity:activity-ktx:1.7.2"
-
-
     //con logging
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
@@ -68,11 +68,17 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     // ViewModel utilities for Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
-    // LiveData
-//    implementation("androidx.lifecycle:lifecycle-live data-ktx:2.6.1")
 
-
+    // youtub player
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.0.0'
+
+    // use both view and compose variants
+    implementation 'com.github.giangpham96:expandable-text:2.0.0'
+    // use only view variant
+    implementation 'com.github.giangpham96.expandable-text:expandable_textview:2.0.0'
+    // use only compose variant
+    implementation 'com.github.giangpham96.expandable-text:expandable_text_compose:2.0.0'
+
 
 
 

@@ -1,4 +1,4 @@
-package com.gm.mvies.feature.category
+package com.gm.mvies.feature.genre
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.fragment.app.DialogFragment
 import com.gm.mvies.R
 import com.gm.mvies.databinding.FragmentCategoryBinding
 import com.gm.mvies.feature.listener.OnGenreListener
-import com.gm.mvies.feature.movie.MoviesAdapter
 
 
 /**
@@ -25,9 +24,10 @@ class GenresFragment (
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         return binding.root
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

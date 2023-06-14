@@ -1,4 +1,4 @@
-package com.gm.mvies.feature.category
+package com.gm.mvies.feature.genre
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

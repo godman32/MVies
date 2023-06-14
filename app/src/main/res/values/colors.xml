@@ -13,9 +13,15 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
 
+
+    <color name="white_200">#F1F1F1</color>
+    <color name="black_700">#383838</color>
+
     <color name="yellow">#E3B735</color>
+    <color name="gray">#9FA3AA</color>
 
     <color name="transparant">#00FFFFFF</color>
     <color name="blur">#9A36343C</color>
+    <color name="blur_50">#B2000000</color>
     <color name="background">#232529</color>
 </resources>

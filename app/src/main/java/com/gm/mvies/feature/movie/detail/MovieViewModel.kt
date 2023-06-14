@@ -24,7 +24,7 @@ class MovieViewModel : ViewModel() {
     private var trailers = MutableLiveData<Trailer>()
     private var reviews = MutableLiveData<List<Review>>()
 
-    private var page= 1
+    var page= 1
 
     fun getMovie(movieId:Int) {
         ApiClient.api.detailMovie(movieId).enqueue(object  : Callback<Movie> {
