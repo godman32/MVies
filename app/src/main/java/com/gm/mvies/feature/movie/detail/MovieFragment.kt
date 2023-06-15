@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.annotation.Nullable
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -18,11 +18,9 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.gm.mvies.R
 import com.gm.mvies.databinding.FragmentMovieBinding
-import com.gm.mvies.databinding.FragmentMovieTestBinding
 import com.gm.mvies.feature.helper.Status
 import com.gm.mvies.feature.helper.setHidden
 import com.gm.mvies.feature.helper.setVisible
-import com.gm.mvies.feature.listener.OnScrollFullListener
 import com.gm.mvies.feature.movie.Movie
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
@@ -35,6 +33,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 
 class MovieFragment(private var movie: Movie) : DialogFragment() {
 
+
     private val binding by lazy { FragmentMovieBinding.inflate(layoutInflater) }
     private val viewModel by lazy {ViewModelProvider(this)[MovieViewModel::class.java]}
     private val reviewsAdapter by lazy { ReviewsAdapter( ) }
@@ -46,7 +45,7 @@ class MovieFragment(private var movie: Movie) : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
+        setView()
         return binding.root
     }
 
@@ -87,7 +86,6 @@ class MovieFragment(private var movie: Movie) : DialogFragment() {
         viewModel.getReviws(movie.id!!.toInt())
         status= Status.LOAD
         binding.load.setVisible()
-        setView()
     }
 
     fun setView(){
@@ -175,8 +173,6 @@ class MovieFragment(private var movie: Movie) : DialogFragment() {
                 viewModel.page++
                 viewModel.getReviws(movie.id!!.toInt())
                 binding.load.setVisible()
-
-                Log.e("CEK", "height "+scrollViewHeight+"   "+"Y"+scrollY+"   "+"OY"+oldScrollY)
             }
         }
     }
@@ -184,5 +180,4 @@ class MovieFragment(private var movie: Movie) : DialogFragment() {
     override fun getTheme(): Int {
         return R.style.AppTheme_FullScreenDialogSolid
     }
-
 }

@@ -79,6 +79,7 @@ class MovieViewModel : ViewModel() {
             }
             override fun onFailure(call: Call<Reviews>, t: Throwable) {
                 Log.d("TAG",t.message.toString())
+                return
             }
         })
     }

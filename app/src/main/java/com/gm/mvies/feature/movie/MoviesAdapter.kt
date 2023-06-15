@@ -61,28 +61,31 @@ class MoviesAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         holder.binding.title.text= movies[position].title
         holder.binding.movieRating.rating = (movies[position].popularity!!.toFloat()) /2
 
-        Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w300"+ movies[position].posterPath)
-            .listener(object : RequestListener<Drawable> {
-                override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?,
-                                          isFirstResource: Boolean): Boolean {
-                    holder.binding.image.scaleType= ImageView.ScaleType.CENTER_INSIDE
-                    holder.binding.load.setHidden()
-                    return false
-                }
-                override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?,
-                                             dataSource: DataSource?, isFirstResource: Boolean): Boolean {
-                    holder.binding.load.setHidden()
-                    return false
-                }
 
-            })
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .error(R.mipmap.logo_black)
-            .into(holder.binding.image)
+        Thread(Runnable {
+            Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w300"+ movies[position].posterPath)
+                .listener(object : RequestListener<Drawable> {
+                    override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?,
+                                              isFirstResource: Boolean): Boolean {
+                        holder.binding.image.scaleType= ImageView.ScaleType.CENTER_INSIDE
+                        holder.binding.load.setHidden()
+                        return false
+                    }
+                    override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?,
+                                                 dataSource: DataSource?, isFirstResource: Boolean): Boolean {
+                        holder.binding.load.setHidden()
+                        return false
+                    }
+
+                })
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .error(R.mipmap.logo_black)
+                .into(holder.binding.image)
+        }).run()
 
         if(position > itemCount - 6 && !load && itemCount > 0){
             load= true
