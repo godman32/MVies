@@ -1,4 +1,4 @@
-package com.zym.zymresseler.conn
+package com.zym.mvies.conn
 
 import com.gm.mvies.BuildConfig
 import com.google.gson.GsonBuilder

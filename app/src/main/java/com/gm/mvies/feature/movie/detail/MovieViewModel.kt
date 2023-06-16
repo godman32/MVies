@@ -10,7 +10,7 @@ import com.gm.mvies.feature.movie.Trailer
 import com.gm.mvies.feature.movie.Trailers
 import com.gm.mvies.feature.review.Review
 import com.gm.mvies.feature.review.Reviews
-import com.zym.zymresseler.conn.ApiClient
+import com.zym.mvies.conn.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -8,7 +8,7 @@ import com.gm.mvies.feature.genre.Genre
 import com.gm.mvies.feature.genre.Genres
 import com.gm.mvies.feature.movie.Movie
 import com.gm.mvies.feature.movie.Movies
-import com.zym.zymresseler.conn.ApiClient
+import com.zym.mvies.conn.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
